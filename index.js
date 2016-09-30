@@ -19,3 +19,7 @@ app.listen(3000, function () {
 app.get('/api', function (req, res) {
     res.send('Hello api!');
 });
+
+app.post('/post', function (req, res) {
+    res.send('Got a POST request');
+});
