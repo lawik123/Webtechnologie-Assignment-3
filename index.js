@@ -6,14 +6,7 @@ var express = require('express');
 var app = express();
 var	mongoose	=	require('mongoose');
 mongoose.connect('mongodb://localhost/test');
-var schema = mongoose.Schema;
-var blogSchema = new Schema({
-    title: { type: String, required: true },
-    author: { type: String, required: true },
-    body: { type: String, required: true },
-    comments: [{ body: String, date: Date }],
-    date: { type: Date, default: Date.now }
-});
+var Blog = require('./modules/Blog.js');
 
 // parse application/json
 var bodyParser = require('body-parser');
@@ -35,6 +28,13 @@ app.use(bodyParser.urlencoded({
 
 }));
 
+var post = new Blog({ title: 'blog post', author: 'blog author', body: 'content'});
+post.save(function (err, result){
+    if (err){
+        return console.error(err);
+    }
+});
+
 // app.use(express.json());       // to support JSON-encoded bodies
 // app.use(express.urlencoded()); // to support URL-encoded bodies
 
@@ -42,3 +42,12 @@ app.post('/post', function (req, res) {
     res.send('Got a POST request!!!!!');
     console.log(req.body.name);
 });
+
+app.get('/blog', function (req, res) {
+    Blog.find({author: 'blog author'}, {comments: 0},
+        function (err, results) {
+            if (err) return console.error(err);
+            res.send(results)
+        });
+
+})
