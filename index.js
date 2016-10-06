@@ -47,15 +47,6 @@ app.post('/register', function (req, res) {
 
 //localhost:3000/api/movies dit vindt alle films
 app.get('/api/movies', function (req, res) {
-
-    if(Object.keys(req.query).length === 0){
-        Movie.find({},
-            function (err, results) {
-                if (err) return console.error(err);
-                res.send(results)
-            });
-    }
-    else{
         var object = {};
         for(i=0; i< Object.keys(req.query).length; i++){
             var name = Object.keys(req.query)[i];
@@ -67,7 +58,6 @@ app.get('/api/movies', function (req, res) {
                 if (err) return console.error(err);
                 res.send(results)
             });
-    }
 
 })
 
