@@ -47,7 +47,6 @@ app.post('/register', function (req, res) {
 
 //localhost:3000/api/movies dit vindt alle films
 app.get('/api/movies', function (req, res) {
-    var q = req.query;
 
     if(Object.keys(req.query).length === 0){
         Movie.find({},
@@ -57,16 +56,18 @@ app.get('/api/movies', function (req, res) {
             });
     }
     else{
+        var object = {};
         for(i=0; i< Object.keys(req.query).length; i++){
-
+            var name = Object.keys(req.query)[i];
+            // query = query+ Object.keys(req.query)[i] + ":" + req.query.title;
+            object[name]= req.query[name];
         }
-        Movie.find({},
+        Movie.find(object,
             function (err, results) {
                 if (err) return console.error(err);
-                res.send(Object.keys(req.query)[0])
+                res.send(results)
             });
     }
-
 
 })
 
