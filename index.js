@@ -46,14 +46,29 @@ app.post('/register', function (req, res) {
 
 
 //localhost:3000/api/movies dit vindt alle films
-// app.get('/api/movies', function (req, res) {
-//     Movie.find({},
-//         function (err, results) {
-//             if (err) return console.error(err);
-//             res.send(results)
-//         });
-//
-// })
+app.get('/api/movies', function (req, res) {
+    var q = req.query;
+
+    if(Object.keys(req.query).length === 0){
+        Movie.find({},
+            function (err, results) {
+                if (err) return console.error(err);
+                res.send(results)
+            });
+    }
+    else{
+        for(i=0; i< Object.keys(req.query).length; i++){
+
+        }
+        Movie.find({},
+            function (err, results) {
+                if (err) return console.error(err);
+                res.send(Object.keys(req.query)[0])
+            });
+    }
+
+
+})
 
 //localhost:3000/api/movies/1 dit vindt de film met id 1
 app.get('/api/movies/:id', function (req, res) {
@@ -65,22 +80,21 @@ app.get('/api/movies/:id', function (req, res) {
 
 })
 
-//localhost:3000/api/movies?title=The%20Godfather dit vindt de film met parameter title The Godfather
-app.get('/api/movies', function (req, res) {
-    req.query[0]
-    Movie.find({title:req.query.title, director:req.query.director },
-        function (err, results) {
-            if (err) return console.error(err);
-            res.send(results)
-        });
-
-})
+// //localhost:3000/api/movies?title=The%20Godfather dit vindt de film met parameter title The Godfather
+// app.get('/api/movies', function (req, res) {
+//     Movie.find({title:req.query.title },
+//         function (err, results) {
+//             if (err) return console.error(err);
+//             res.send(results)
+//         });
+//
+// })
 
 //niet nodig voor opdracht, gedaan als test
 app.post('/addmovie', function (req, res) {
     // res.send('Got a POST request!!!!!');
     // console.log(req.body.name);
-    var post = new Movie({_id: 4,title: req.body.title, release: req.body.release, length: req.body.length,
+    var post = new Movie({_id: req.body._id,title: req.body.title, release: req.body.release, length: req.body.length,
         director: req.body.director, description: req.body.description});
     post.save(function (err,result) {
 
