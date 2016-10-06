@@ -44,8 +44,31 @@ app.post('/register', function (req, res) {
     res.send('added')
 });
 
+
+//localhost:3000/api/movies dit vindt alle films
+// app.get('/api/movies', function (req, res) {
+//     Movie.find({},
+//         function (err, results) {
+//             if (err) return console.error(err);
+//             res.send(results)
+//         });
+//
+// })
+
+//localhost:3000/api/movies/1 dit vindt de film met id 1
+app.get('/api/movies/:id', function (req, res) {
+    Movie.find({_id:req.params.id},
+        function (err, results) {
+            if (err) return console.error(err);
+            res.send(results)
+        });
+
+})
+
+//localhost:3000/api/movies?title=The%20Godfather dit vindt de film met parameter title The Godfather
 app.get('/api/movies', function (req, res) {
-    Movie.find({},
+    req.query[0]
+    Movie.find({title:req.query.title, director:req.query.director },
         function (err, results) {
             if (err) return console.error(err);
             res.send(results)
