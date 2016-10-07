@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({
 
 }));
 
+
 app.post('/api/authenticate', function (req,res) {
     User.findOne({userName: req.body.userName},function (err, user) {
         if (err) return console.error(err);
@@ -38,7 +39,7 @@ app.post('/api/authenticate', function (req,res) {
                 res.send('Invalid password')
             }
             else{
-                var token = jwt.sign(user, app.get('private-key'), {
+                var token = jwt.sign({userName:req.body.userName}, app.get('private-key'), {
                     expiresIn: 60*10 // expires in 10 minutes
                 });
                 res.send(token)
@@ -58,7 +59,6 @@ apiRoutes.use(function (req,res,next) {
                 res.send('Failed to Authenticate token')
             }
             else{
-
                 req.decoded = decoded;
                 next();
             }
@@ -69,13 +69,16 @@ apiRoutes.use(function (req,res,next) {
             success:false,
             message: 'No token provided'
         })
+
     }
 
 })
 
 apiRoutes.get('/', function (req, res) {
     res.send('Hello api!');
+
 });
+
 
 // app.use(express.json());       // to support JSON-encoded bodies
 // app.use(express.urlencoded()); // to support URL-encoded bodies
@@ -99,12 +102,15 @@ app.get('/api/movies', function (req, res) {
             var name = Object.keys(req.query)[i];
             object[name]= req.query[name];
         }
+
         Movie.find(object,
             function (err, results) {
                 if (err) return console.error(err);
                 res.send(results)
             });
 })
+
+
 
 //localhost:3000/api/movies/1 dit vindt de film met id 1
 app.get('/api/movies/:id', function (req, res) {
@@ -131,5 +137,7 @@ app.post('/addmovie', function (req, res) {
     })
     res.send('added')
 });
+
+
 
 
