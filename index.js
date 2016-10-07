@@ -103,11 +103,19 @@ app.get('/api/movies', function (req, res) {
             object[name]= req.query[name];
         }
 
-        Movie.find(object,
+        Movie.find(object,{ratings:0,__v:0},
             function (err, results) {
                 if (err) return console.error(err);
                 res.send(results)
             });
+})
+
+app.get('/api/movieratings', function (req, res) {
+    Movie.aggregate([{$match:{ratings:{$exists:true}}},{$project:{title:"$title",rating_average:{$avg:"$ratings.rating"},rating_amount:{$size:"$ratings"}}}],function (err,results) {
+        if(err) return console.error(err);
+        res.send(results)
+
+    });
 })
 
 
