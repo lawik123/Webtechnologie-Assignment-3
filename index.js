@@ -75,10 +75,18 @@ apiRoutes.use(function (req,res,next) {
 })
 
 apiRoutes.get('/', function (req, res) {
-    res.send('Hello api!');
+    res.send(req.decoded.userName);
 
 });
 
+apiRoutes.get('/personalratings',function (req,res) {
+    Movie.find({'ratings.userName':req.decoded.userName},{'ratings':{$elemMatch:{'userName':req.decoded.userName}},'__v':0,'ratings.userName':0},function (err, results) {
+        if (err) return console.error(err);
+        res.send(results)
+
+    })
+
+})
 
 // app.use(express.json());       // to support JSON-encoded bodies
 // app.use(express.urlencoded()); // to support URL-encoded bodies
