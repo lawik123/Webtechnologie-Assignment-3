@@ -3,13 +3,22 @@
  */
 var express = require('express');
 var app = express();
-var	mongoose	=	require('mongoose');
+var	mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/notFlix');;
 var jwt = require('jsonwebtoken');
 var apiRoutes = express.Router();
 var Movie = require('./modules/Movies');
 var User = require ('./modules/User');
-var initdb = require('initdb');
+var initdb = require('./modules/initdb');
+
+
+//clear the movies collection to avoid duplicates
+Movie.remove({},function (err) {
+    console.log('collection removed')
+})
+
+initdb();//initialize the movies collection
+
 
 app.set('private-key', 'super-secret-key');
 

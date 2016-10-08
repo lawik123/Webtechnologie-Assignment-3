@@ -1,8 +1,9 @@
 /**
  * Created by Lars Meulenbroek on 10/7/2016.
  */
+var Movie = require('./Movies');
 
-function init() {
+module.exports = function (){
 // create a new Movie
     var newMovie1 = Movie({
         _id: 1,
@@ -89,4 +90,5 @@ function init() {
         console.log('Movie 1 created!');
     });
 }
+
 
