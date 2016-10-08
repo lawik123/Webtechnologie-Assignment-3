@@ -1,7 +1,6 @@
 /**
  * Created by Lawik Ayoub on 26-Sep-16.
  */
-
 var express = require('express');
 var app = express();
 var	mongoose	=	require('mongoose');
@@ -10,6 +9,7 @@ var jwt = require('jsonwebtoken');
 var apiRoutes = express.Router();
 var Movie = require('./modules/Movies');
 var User = require ('./modules/User');
+var initdb = require('initdb');
 
 app.set('private-key', 'super-secret-key');
 
