@@ -4,7 +4,7 @@
 var express = require('express');
 var app = express();
 var	mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/notFlix');;
+mongoose.connect('mongodb://localhost/notFlix');
 var jwt = require('jsonwebtoken');
 var apiRoutes = express.Router();
 var Movie = require('./modules/Movies');
@@ -15,7 +15,7 @@ var initdb = require('./modules/initdb');
 //clear the movies collection to avoid duplicates
 Movie.remove({},function (err) {
     console.log('collection removed')
-})
+});
 
 initdb();//initialize the movies collection
 
@@ -57,7 +57,7 @@ app.post('/api/authenticate', function (req,res) {
         }
 
     });
-})
+});
 
 apiRoutes.use(function (req,res,next) {
     var token = req.headers['authorization'];
@@ -81,7 +81,7 @@ apiRoutes.use(function (req,res,next) {
 
     }
 
-})
+});
 
 apiRoutes.get('/', function (req, res) {
     res.send(req.decoded.userName);
@@ -95,7 +95,7 @@ apiRoutes.get('/personalratings',function (req,res) {
 
     })
 
-})
+});
 
 // app.use(express.json());       // to support JSON-encoded bodies
 // app.use(express.urlencoded()); // to support URL-encoded bodies
@@ -107,7 +107,7 @@ app.post('/register', function (req, res) {
                         userName: req.body.username, password: req.body.password});
     post.save(function (err,result) {
         
-    })
+    });
     res.send('added')
 });
 
@@ -125,7 +125,7 @@ app.get('/api/movies', function (req, res) {
                 if (err) return console.error(err);
                 res.send(results)
             });
-})
+});
 
 app.get('/api/movieratings', function (req, res) {
     Movie.aggregate([{$match:{ratings:{$exists:true}}},{$project:{title:"$title",rating_average:{$avg:"$ratings.rating"},rating_amount:{$size:"$ratings"}}}],function (err,results) {
@@ -133,7 +133,7 @@ app.get('/api/movieratings', function (req, res) {
         res.send(results)
 
     });
-})
+});
 
 
 
@@ -145,7 +145,7 @@ app.get('/api/movies/:id', function (req, res) {
             res.send(results)
         });
 
-})
+});
 
 
 app.use('/api', apiRoutes);
@@ -159,7 +159,7 @@ app.post('/addmovie', function (req, res) {
         director: req.body.director, description: req.body.description});
     post.save(function (err,result) {
 
-    })
+    });
     res.send('added')
 });
 

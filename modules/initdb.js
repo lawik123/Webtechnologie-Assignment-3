@@ -89,6 +89,6 @@ module.exports = function (){
 
         console.log('Movie 1 created!');
     });
-}
+};
 
 
