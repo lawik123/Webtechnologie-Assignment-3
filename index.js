@@ -22,9 +22,7 @@ Movie.remove({},function (err) {
         movie.nextCount(function(err, count) {
             movie.resetCount(function(err, nextCount) {
             });
-
         });
-
     });
     console.log('collection removed')
 
@@ -101,13 +99,69 @@ apiRoutes.get('/', function (req, res) {
 
 });
 
+//TODO: maybe change to aggregate so the ratings array isn't display but only the rating.
 apiRoutes.get('/personalratings',function (req,res) {
-    Movie.find({'ratings.userName':req.decoded.userName},{'ratings':{$elemMatch:{'userName':req.decoded.userName}},'__v':0,'ratings.userName':0},function (err, results) {
+    Movie.find({'ratings.userName':req.decoded.userName},{'ratings':{$elemMatch:{'userName':req.decoded.userName}},'__v':0,'ratings.userName':0}).sort({'_id':1}).exec(function (err, results) {
         if (err) return console.error(err);
         res.send(results)
 
     })
 
+});
+
+apiRoutes.get('/userlist',function (req,res) {
+    var object = {};
+    for(i=0; i< Object.keys(req.query).length; i++){
+        var name = Object.keys(req.query)[i];
+        object[name]= req.query[name];
+    }
+
+    User.find(object,{password:0,_id:0,__v:0},
+        function (err, results) {
+            if (err) return console.error(err);
+            res.send(results)
+        });
+
+});
+
+apiRoutes.post('/addrating', function (req,res) {
+    // movie = Movie.findByIdAndUpdate(req.body._id,{$addToSet:{"ratings":{userName:req.decoded.userName,rating:req.body.rating}}},function (err,results)
+    movie = Movie.findById({_id:req.body._id},function (err,results) {
+        if(results===null){
+            res.send('invalid id');
+        }else {
+            var array = results.ratings;
+
+            function alreadyRated() {
+                for (i = 0; i < array.length; i++) {
+                    if (array[i].userName === req.decoded.userName) {
+                        // res.send("Already placed a rating for this movie");
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            }
+
+            if (alreadyRated()) {
+                res.send("User already submitted rating for this movie");
+            }
+            else {
+                movie.update({
+                    $addToSet: {
+                        "ratings": {
+                            userName: req.decoded.userName,
+                            rating: req.body.rating
+                        }
+                    }
+                }, function (err, results) {
+                    res.send("Added");
+                });
+            }
+        }
+
+    });
 });
 
 // app.use(express.json());       // to support JSON-encoded bodies
@@ -133,15 +187,15 @@ app.get('/api/movies', function (req, res) {
             object[name]= req.query[name];
         }
 
-        Movie.find(object,{ratings:0,__v:0},
-            function (err, results) {
+        Movie.find(object,{ratings:0,__v:0}).sort({'_id':1}).exec
+        (function (err, results) {
                 if (err) return console.error(err);
                 res.send(results)
             });
 });
 
 app.get('/api/movieratings', function (req, res) {
-    Movie.aggregate([{$match:{ratings:{$exists:true}}},{$project:{title:"$title",rating_average:{$avg:"$ratings.rating"},rating_amount:{$size:"$ratings"}}}],function (err,results) {
+    Movie.aggregate([{$project:{title:"$title",rating_average:{$avg:"$ratings.rating"},rating_amount:{$size:"$ratings"}}},{$match:{rating_amount:{$gt:0}}},]).sort({'_id':1}).exec( function (err,results) {
         if(err) return console.error(err);
         res.send(results)
 

@@ -1,6 +1,7 @@
 /**
  * Created by Lars Meulenbroek on 10/7/2016.
  */
+
 var Movie = require('./Movies');
 
 module.exports = function (){
@@ -20,6 +21,7 @@ module.exports = function (){
         console.log('Movie 1 created!');
     });
 
+
 // create a new Movie
     var newMovie2 = Movie({
         title: 'The Godfather',
@@ -33,10 +35,10 @@ module.exports = function (){
     newMovie2.save(function (err) {
         if (err) throw err;
 
-        console.log('Movie 1 created!');
+        console.log('Movie 2 created!');
     });
 
-// create a new Movie
+    // create a new Movie
     var newMovie3 = Movie({
         title: 'The Godfather: Part II',
         release: '1974',
@@ -49,8 +51,9 @@ module.exports = function (){
     newMovie3.save(function (err) {
         if (err) throw err;
 
-        console.log('Movie 1 created!');
+        console.log('Movie 3 created!');
     });
+
 
 // create a new Movie
     var newMovie4 = Movie({
@@ -80,6 +83,67 @@ module.exports = function (){
 
 // save the Movie
     newMovie5.save(function (err) {
+        if (err) throw err;
+
+        console.log('Movie 1 created!');
+    });
+
+    // create a new Movie
+    var newMovie6 = Movie({
+        title: '11 Angry Men',
+        release: '1957',
+        length: 96,
+        director: 'Sidney Lumet',
+        description: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.'
+    });
+
+// save the Movie
+    newMovie6.save(function (err) {
+        if (err) throw err;
+
+        console.log('Movie 1 created!');
+    });
+
+    var newMovie7 = Movie({
+        title: '10 Angry Men',
+        release: '1957',
+        length: 96,
+        director: 'Sidney Lumet',
+        description: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.'
+    });
+
+// save the Movie
+    newMovie7.save(function (err) {
+        if (err) throw err;
+
+        console.log('Movie 1 created!');
+    });
+
+    var newMovie8 = Movie({
+        title: '9 Angry Men',
+        release: '1957',
+        length: 96,
+        director: 'Sidney Lumet',
+        description: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.'
+    });
+
+// save the Movie
+    newMovie8.save(function (err) {
+        if (err) throw err;
+
+        console.log('Movie 1 created!');
+    });
+
+    var newMovie9 = Movie({
+        title: '8 Angry Men',
+        release: '1957',
+        length: 96,
+        director: 'Sidney Lumet',
+        description: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.'
+    });
+
+// save the Movie
+    newMovie9.save(function (err) {
         if (err) throw err;
 
         console.log('Movie 1 created!');
