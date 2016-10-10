@@ -6,7 +6,6 @@ var Movie = require('./Movies');
 module.exports = function (){
 // create a new Movie
     var newMovie1 = Movie({
-        _id: 1,
         title: 'The Shawshank Redemption',
         release: '1994',
         length: 142,
@@ -23,7 +22,6 @@ module.exports = function (){
 
 // create a new Movie
     var newMovie2 = Movie({
-        _id: 2,
         title: 'The Godfather',
         release: '1972',
         length: 175,
@@ -40,7 +38,6 @@ module.exports = function (){
 
 // create a new Movie
     var newMovie3 = Movie({
-        _id: 3,
         title: 'The Godfather: Part II',
         release: '1974',
         length: 202,
@@ -57,7 +54,6 @@ module.exports = function (){
 
 // create a new Movie
     var newMovie4 = Movie({
-        _id: 4,
         title: 'The Dark Knight',
         release: '2008',
         length: 152,
@@ -75,7 +71,6 @@ module.exports = function (){
 
 // create a new Movie
     var newMovie5 = Movie({
-        _id: 5,
         title: '12 Angry Men',
         release: '1957',
         length: 96,

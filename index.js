@@ -3,8 +3,10 @@
  */
 var express = require('express');
 var app = express();
-var	mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/notFlix');
+var	mongoose = require('mongoose'),Schema = mongoose.Schema,
+    autoIncrement = require('mongoose-auto-increment');
+var connection = mongoose.connect('mongodb://localhost/notFlix');
+autoIncrement.initialize(connection)
 var jwt = require('jsonwebtoken');
 var apiRoutes = express.Router();
 var Movie = require('./modules/Movies');
@@ -12,10 +14,21 @@ var User = require ('./modules/User');
 var initdb = require('./modules/initdb');
 
 
+
 //clear the movies collection to avoid duplicates
 Movie.remove({},function (err) {
+    movie = new Movie();
+    movie.save(function (err) {
+        movie.nextCount(function(err, count) {
+            movie.resetCount(function(err, nextCount) {
+            });
+
+        });
+
+    });
     console.log('collection removed')
-});
+
+})
 
 initdb();//initialize the movies collection
 
