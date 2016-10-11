@@ -125,7 +125,6 @@ apiRoutes.get('/userlist',function (req,res) {
 });
 
 apiRoutes.post('/addrating', function (req,res) {
-    // movie = Movie.findByIdAndUpdate(req.body._id,{$addToSet:{"ratings":{userName:req.decoded.userName,rating:req.body.rating}}},function (err,results)
     movie = Movie.findById({_id:req.body._id},function (err,results) {
         if(results===null){
             res.send('invalid id');
@@ -138,10 +137,8 @@ apiRoutes.post('/addrating', function (req,res) {
                         // res.send("Already placed a rating for this movie");
                         return true;
                     }
-                    else {
-                        return false;
-                    }
                 }
+                return false;
             }
 
             if (alreadyRated()) {
@@ -164,14 +161,84 @@ apiRoutes.post('/addrating', function (req,res) {
     });
 });
 
+apiRoutes.post('/removerating', function (req,res) {
+    movie = Movie.findById({_id:req.body._id},function (err,results) {
+        if(results===null){
+            res.send('invalid id');
+        }else {
+            var array = results.ratings;
+
+            function alreadyRated() {
+                for (i = 0; i < array.length; i++) {
+                    if (array[i].userName === req.decoded.userName) {
+                        // res.send("Already placed a rating for this movie");
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            if (!alreadyRated()) {
+                res.send("User hasn't subimitted a rating for this movie.");
+            }
+            else {
+                movie.update({
+                    $pull: {
+                        "ratings": {
+                            userName: req.decoded.userName
+                        }
+                    }
+                }, function (err, results) {
+                    res.send("removed");
+                });
+            }
+        }
+    });
+});
+
+apiRoutes.post('/changerating', function (req,res) {
+    movie = Movie.findById({_id:req.body._id},function (err,results) {
+        if(results===null){
+            res.send('invalid id');
+        }else {
+            var array = results.ratings;
+            console.log(array);
+
+            function alreadyRated() {
+                for (i = 0; i < array.length; i++) {
+                    if (array[i].userName === req.decoded.userName) {
+                        // res.send("Already placed a rating for this movie");
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            if (!alreadyRated()) {
+                res.send("User hasn't subimitted a rating for this movie.");
+            }
+            else {
+                movie.update({ratings:{$elemMatch:{userName:req.decoded.userName}}},{
+                    $set: {
+                        "ratings.$": {
+                            userName: req.decoded.userName,
+                            rating: req.body.rating
+                        }
+                    }
+                }, function (err, results) {
+                    res.send("changed");
+                });
+            }
+        }
+    });
+});
+
 // app.use(express.json());       // to support JSON-encoded bodies
 // app.use(express.urlencoded()); // to support URL-encoded bodies
 
 app.post('/register', function (req, res) {
-    // res.send('Got a POST request!!!!!');
-    // console.log(req.body.name);
     var post = new User({lastName:req.body.lastName, tussenvoegsel: req.body.tussenvoegsel, firstName: req.body.firstName,
-                        userName: req.body.username, password: req.body.password});
+                        userName: req.body.userName, password: req.body.password});
     post.save(function (err,result) {
         
     });
@@ -220,8 +287,6 @@ app.use('/api', apiRoutes);
 
 //niet nodig voor opdracht, gedaan als test
 app.post('/addmovie', function (req, res) {
-    // res.send('Got a POST request!!!!!');
-    // console.log(req.body.name);
     var post = new Movie({_id: req.body._id,title: req.body.title, release: req.body.release, length: req.body.length,
         director: req.body.director, description: req.body.description});
     post.save(function (err,result) {
