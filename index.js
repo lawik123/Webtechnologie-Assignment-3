@@ -26,7 +26,7 @@ Movie.remove({},function (err) {
     });
     console.log('collection removed')
 
-})
+});
 
 initdb();//initialize the movies collection
 
@@ -52,17 +52,26 @@ app.post('/api/authenticate', function (req,res) {
         if (err) return console.error(err);
 
         if(!user){
-            res.send('Invalid username')
+            return res.status(401).send({
+                success:false,
+                message: 'username does not exist'
+            });
         }
         else if(user){
             if(user.password != req.body.password){
-                res.send('Invalid password')
+                return res.status(401).send({
+                    success:false,
+                    message: 'invalid password'
+                });
             }
             else{
                 var token = jwt.sign({userName:req.body.userName}, app.get('private-key'), {
                     expiresIn: 60*10 // expires in 10 minutes
                 });
-                res.send(token)
+                return res.status(200).send({
+                    success:true,
+                    token: token
+                });
 
             }
         }
@@ -76,7 +85,10 @@ apiRoutes.use(function (req,res,next) {
     if(token){
         jwt.verify(token, app.get('private-key'), function (err, decoded) {
             if(err){
-                res.send('Failed to Authenticate token')
+                return res.status(401).send({
+                    success:false,
+                    message: 'Invalid token'
+                });
             }
             else{
                 req.decoded = decoded;
@@ -85,25 +97,19 @@ apiRoutes.use(function (req,res,next) {
 
         });
     } else{
-        return res.status(403).send({
+        return res.status(401).send({
             success:false,
             message: 'No token provided'
-        })
+        });
 
     }
 
 });
 
-apiRoutes.get('/', function (req, res) {
-    res.send(req.decoded.userName);
-
-});
-
-//TODO: maybe change to aggregate so the ratings array isn't display but only the rating.
 apiRoutes.get('/personalratings',function (req,res) {
     Movie.find({'ratings.userName':req.decoded.userName},{'ratings':{$elemMatch:{'userName':req.decoded.userName}},'__v':0,'ratings.userName':0}).sort({'_id':1}).exec(function (err, results) {
         if (err) return console.error(err);
-        res.send(results)
+            res.status(200).send(results);
 
     })
 
@@ -118,8 +124,23 @@ apiRoutes.get('/userlist',function (req,res) {
 
     User.find(object,{password:0,_id:0,__v:0},
         function (err, results) {
-            if (err) return console.error(err);
-            res.send(results)
+            res.status(200).send(results);
+
+        });
+});
+
+apiRoutes.get('/userlist/:username',function (req,res) {
+    User.find({userName:req.params.username},{password:0,_id:0,__v:0},
+        function (err, results) {
+            if(results.length===0){
+                res.status(404).send({
+                    success: false,
+                    message: 'No user found'
+                });
+            }
+            else{
+                res.status(200).send(results);
+            }
         });
 
 });
@@ -127,10 +148,14 @@ apiRoutes.get('/userlist',function (req,res) {
 apiRoutes.post('/addrating', function (req,res) {
     movie = Movie.findById({_id:req.body._id},function (err,results) {
         if(results===null){
-            res.send('invalid id');
+            if(results.length===0){
+                res.status(404).send({
+                    success: false,
+                    message: 'id does not exist'
+                });
+            }
         }else {
             var array = results.ratings;
-
             function alreadyRated() {
                 for (i = 0; i < array.length; i++) {
                     if (array[i].userName === req.decoded.userName) {
@@ -142,29 +167,47 @@ apiRoutes.post('/addrating', function (req,res) {
             }
 
             if (alreadyRated()) {
-                res.send("User already submitted rating for this movie");
+                res.status(409).send({
+                    success: false,
+                    message: 'user already submitted a rating for this movie'
+                });
             }
             else {
-                movie.update({
-                    $addToSet: {
-                        "ratings": {
-                            userName: req.decoded.userName,
-                            rating: req.body.rating
+                var rating = req.body.rating;
+                if(rating===0.5||rating===1||rating===1.5||rating===2||rating===2.5||rating===3
+                ||rating===3.5||rating===4||rating===4.5||rating==5) {
+                    movie.update({
+                        $addToSet: {
+                            "ratings": {
+                                userName: req.decoded.userName,
+                                rating: req.body.rating
+                            }
                         }
-                    }
-                }, function (err, results) {
-                    res.send("Added");
-                });
+                    }, function (err, results) {
+                        res.status(201).send({
+                            success: true,
+                            message: 'rating submitted'
+                        });
+                    });
+                } else{
+                    res.status(400).send({
+                        success: false,
+                        message: 'invalid rating'
+                    });
+                }
             }
         }
 
     });
 });
 
-apiRoutes.post('/removerating', function (req,res) {
+apiRoutes.delete('/removerating', function (req,res) {
     movie = Movie.findById({_id:req.body._id},function (err,results) {
         if(results===null){
-            res.send('invalid id');
+            res.status(404).send({
+                success: false,
+                message: 'invalid id'
+            });
         }else {
             var array = results.ratings;
 
@@ -179,7 +222,10 @@ apiRoutes.post('/removerating', function (req,res) {
             }
 
             if (!alreadyRated()) {
-                res.send("User hasn't subimitted a rating for this movie.");
+                res.status(404).send({
+                    success: false,
+                    message: 'No rating to remove, user has not rated this movie'
+                });
             }
             else {
                 movie.update({
@@ -189,20 +235,25 @@ apiRoutes.post('/removerating', function (req,res) {
                         }
                     }
                 }, function (err, results) {
-                    res.send("removed");
+                    res.status(200).send({
+                        success: true,
+                        message: 'Rating removed'
+                    });
                 });
             }
         }
     });
 });
 
-apiRoutes.post('/changerating', function (req,res) {
+apiRoutes.put('/changerating', function (req,res) {
     movie = Movie.findById({_id:req.body._id},function (err,results) {
         if(results===null){
-            res.send('invalid id');
+            res.status(404).send({
+                success: false,
+                message: 'invalid id'
+            });
         }else {
             var array = results.ratings;
-            console.log(array);
 
             function alreadyRated() {
                 for (i = 0; i < array.length; i++) {
@@ -215,34 +266,66 @@ apiRoutes.post('/changerating', function (req,res) {
             }
 
             if (!alreadyRated()) {
-                res.send("User hasn't subimitted a rating for this movie.");
+                res.status(404).send({
+                    success: false,
+                    message: 'No rating to update, user has not rated this movie'
+                });
             }
             else {
-                movie.update({ratings:{$elemMatch:{userName:req.decoded.userName}}},{
-                    $set: {
-                        "ratings.$": {
-                            userName: req.decoded.userName,
-                            rating: req.body.rating
+                if(rating===0.5||rating===1||rating===1.5||rating===2||rating===2.5||rating===3
+                    ||rating===3.5||rating===4||rating===4.5||rating==5) {
+                    movie.update({ratings: {$elemMatch: {userName: req.decoded.userName}}}, {
+                        $set: {
+                            "ratings.$": {
+                                userName: req.decoded.userName,
+                                rating: req.body.rating
+                            }
                         }
-                    }
-                }, function (err, results) {
-                    res.send("changed");
-                });
+                    }, function (err, results) {
+                        res.status(200).send({
+                            success: true,
+                            message: 'Rating updated'
+                        });
+                    });
+                }else{
+                    res.status(400).send({
+                        success: false,
+                        message: 'invalid rating'
+                    });
+                }
             }
         }
     });
 });
 
-// app.use(express.json());       // to support JSON-encoded bodies
-// app.use(express.urlencoded()); // to support URL-encoded bodies
+app.post('/api/register', function (req, res) {
+    User.findOne({userName:req.body.userName},function (err,results) {
+        if(results){
+            return res.status(409).send({
+                success: false,
+                message: 'username already exists'
+            })
+        }else if(!results){
+            var post = new User({lastName:req.body.lastName, tussenvoegsel: req.body.tussenvoegsel, firstName: req.body.firstName,
+                userName: req.body.userName, password: req.body.password});
+            post.save(function (err,result) {
+                if(result){
+                    return res.status(201).send({
+                        success: true,
+                        message: 'created'
+                    })
 
-app.post('/register', function (req, res) {
-    var post = new User({lastName:req.body.lastName, tussenvoegsel: req.body.tussenvoegsel, firstName: req.body.firstName,
-                        userName: req.body.userName, password: req.body.password});
-    post.save(function (err,result) {
-        
+                }
+                else{
+                    return res.status(400).send({
+                        success: false,
+                        message: 'Missing fields'
+                    })
+                }
+            })
+        }
     });
-    res.send('added')
+
 });
 
 
@@ -273,27 +356,24 @@ app.get('/api/movieratings', function (req, res) {
 
 //localhost:3000/api/movies/1 dit vindt de film met id 1
 app.get('/api/movies/:id', function (req, res) {
-    Movie.find({_id:req.params.id},
+    Movie.find({_id:req.params.id},{ratings:0,__v:0},
         function (err, results) {
             if (err) return console.error(err);
-            res.send(results)
+            if(results.length===0){
+                res.status(404).send({
+                    success: false,
+                    message: 'invalid id'
+                });
+            }
+            else{
+                res.status(200).send(results);
+            }
         });
 
 });
 
-
 app.use('/api', apiRoutes);
 
-
-//niet nodig voor opdracht, gedaan als test
-app.post('/addmovie', function (req, res) {
-    var post = new Movie({_id: req.body._id,title: req.body.title, release: req.body.release, length: req.body.length,
-        director: req.body.director, description: req.body.description});
-    post.save(function (err,result) {
-
-    });
-    res.send('added')
-});
 
 
 
