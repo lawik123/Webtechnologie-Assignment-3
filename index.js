@@ -346,8 +346,7 @@ app.get('/api/movies', function (req, res) {
 
 app.get('/api/movieratings', function (req, res) {
     Movie.aggregate([{$project:{title:"$title",rating_average:{$avg:"$ratings.rating"},rating_amount:{$size:"$ratings"}}},{$match:{rating_amount:{$gt:0}}},]).sort({'_id':1}).exec( function (err,results) {
-        if(err) return console.error(err);
-        res.send(results)
+        res.status(200).send(results)
 
     });
 });
