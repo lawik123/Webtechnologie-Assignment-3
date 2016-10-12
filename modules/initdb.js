@@ -3,6 +3,7 @@
  */
 
 var Movie = require('./Movies');
+var User = require('./User');
 
 module.exports = function (){
 // create a new Movie
@@ -68,7 +69,7 @@ module.exports = function (){
     newMovie4.save(function (err) {
         if (err) throw err;
 
-        console.log('Movie 1 created!');
+        console.log('Movie 4 created!');
     });
 
 
@@ -85,69 +86,82 @@ module.exports = function (){
     newMovie5.save(function (err) {
         if (err) throw err;
 
-        console.log('Movie 1 created!');
+        console.log('Movie 5 created!');
     });
 
     // create a new Movie
     var newMovie6 = Movie({
-        title: '11 Angry Men',
-        release: '1957',
-        length: 96,
-        director: 'Sidney Lumet',
-        description: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.'
+        title: 'Pulp fiction',
+        release: '1994',
+        length: 154,
+        director: 'Quentin Tarantino',
+        description: "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
     });
 
 // save the Movie
     newMovie6.save(function (err) {
         if (err) throw err;
 
-        console.log('Movie 1 created!');
+        console.log('Movie 6 created!');
     });
 
     var newMovie7 = Movie({
-        title: '10 Angry Men',
-        release: '1957',
-        length: 96,
-        director: 'Sidney Lumet',
-        description: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.'
+        title: 'Fight Club',
+        release: '1999',
+        length: 139,
+        director: 'David Fincher',
+        description: 'An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more.'
     });
 
 // save the Movie
     newMovie7.save(function (err) {
         if (err) throw err;
 
-        console.log('Movie 1 created!');
+        console.log('Movie 7 created!');
     });
 
     var newMovie8 = Movie({
-        title: '9 Angry Men',
-        release: '1957',
-        length: 96,
-        director: 'Sidney Lumet',
-        description: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.'
+        title: 'Inception',
+        release: '2010',
+        length: 148,
+        director: 'Christopher Nolan',
+        description: 'A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.'
     });
 
 // save the Movie
     newMovie8.save(function (err) {
         if (err) throw err;
 
-        console.log('Movie 1 created!');
+        console.log('Movie 8 created!');
     });
 
     var newMovie9 = Movie({
-        title: '8 Angry Men',
-        release: '1957',
-        length: 96,
-        director: 'Sidney Lumet',
-        description: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.'
+        title: 'Goodfellas',
+        release: '1990',
+        length: 146,
+        director: 'Martin Scorsese',
+        description: 'Henry Hill and his friends work their way up through the mob hierarchy.'
     });
 
 // save the Movie
     newMovie9.save(function (err) {
         if (err) throw err;
 
-        console.log('Movie 1 created!');
+        console.log('Movie 9 created!');
     });
+
+    var newUser = User({
+        lastName: 'test',
+        firstName: 'test',
+        userName: 'test',
+        password: 'test'
+    })
+
+    newUser.save(function (err) {
+        if(err) throw err;
+        console.log('test user created')
+
+    })
 };
 
 
