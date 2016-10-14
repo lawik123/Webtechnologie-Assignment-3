@@ -1,7 +1,53 @@
 body {
   padding-top: 75px;
 }
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+.backgroundHome {
+  padding-top: 40px;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../notflixbg.jpg");
 }
+
+h1 {
+  margin: 17% 1% 0% 1%;
+  line-height: 1.1em;
+  font-size: 450%;
+  top: 60%;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  text-shadow: 1px 1px 10px #000;
+}
+
+.slogan {
+  color: white;
+  margin-left: 4%;
+  line-height: 1.1em;
+  top: 60%;
+  font-size: 280%;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  text-shadow: 1px 1px 10px #000;
+}
+
+.netflixText {
+  color: red;
+  font-family: "Century Gothic", Times, sans-serif;
+}
+
+.navbar-inverse .navbar-nav>li>a.netflixText {
+  color: red;
+}
+
+.loginStyle {
+  color: white;
+  background-color: red;
+  border: #9f1010;
+}
+
+.loginStyle:hover {
+  color: red;
+}
+
+
