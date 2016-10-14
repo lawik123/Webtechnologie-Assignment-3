@@ -12,6 +12,7 @@ var apiRoutes = express.Router();
 var Movie = require('./modules/Movies');
 var User = require ('./modules/User');
 var initdb = require('./modules/initdb');
+app.use(express.static('./public'));
 
 
 //clear the movies collection to avoid duplicates
