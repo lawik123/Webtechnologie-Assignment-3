@@ -1,0 +1,28 @@
+body {
+  padding-top: 75px;
+  text-align: center;
+  padding-left:75px;
+  padding-right:75px;
+}
+.btn-default:hover{
+  background-color: red;
+  color: white;
+}
+
+.btn-default:focus{
+  outline:none!important;
+}
+
+a{
+  color: white;
+}
+
+a:hover{
+  color: red;
+}
+
+a:focus{
+  color:red;
+}
+
+
