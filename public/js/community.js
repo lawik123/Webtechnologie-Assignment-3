@@ -21,10 +21,17 @@ $(document).ready(function(){
             }
 
         },
+        error: function (request,status,error) {
+            if(request.status===401){
+                // $("#table-content").hide();
+                $(".table").hide();
+                $("#table-description").append("Please <a href='#'>Login</a> to use this feature.");
+            }
+        },
         beforeSend: setHeader
     })
     function setHeader(xhr) {
-        xhr.setRequestHeader("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imxhd2lrMSIsImlhdCI6MTQ3NjQ1NTQ1OCwiZXhwIjoxNDc2NDU3MjU4fQ.vQ7uakobgR3WX2w_OjV4_Te8f9ST3YnKf6ixNFVy83Y")
+        xhr.setRequestHeader("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imxhd2lrMSIsImlhdCI6MTQ3NjQ3ODM0MywiZXhwIjoxNDc2NDgwMTQzfQ.0J4x54O6rqggmZPrNHIO9wHChu53Oi68cPYMcu7vKcY")
     }
 
 });

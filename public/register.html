@@ -21,6 +21,8 @@
     <![endif]-->
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/community.js"></script>
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js" rel="script">-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -63,40 +65,58 @@
       <small>Not a problem!</small>
     </h1>
     <h2>Register your <strong>free</strong> account below</h2>
-    <form>
-      <div class="form-group form-group-lg">
-        <div class="input-group">
-          <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-          <input type="text" class="form-control" id="registerInputUsername" placeholder="Username">
-        </div>
+    <form method="post" action="#" data-toggle="validator" role="form">
+      <div class="form-group form-group-lg has-feedback">
+        <label for="registerInputFirstName" class="control-label">First name</label>
+        <input type="text" class="form-control" id="registerInputFirstName" placeholder="First name" required>
+        <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
+        <div class="help-block with-errors"></div>
       </div>
       <div class="form-group form-group-lg">
-        <input type="text" class="form-control" id="registerInputFirstName" placeholder="First name">
-      </div>
-      <div class="form-group form-group-lg">
+        <label for="registerInputPrefixName" class="control-label">Last-name prefix</label>
         <input type="text" class="form-control" id="registerInputPrefixName" placeholder="Last-name prefix">
       </div>
-      <div class="form-group form-group-lg">
-        <input type="text" class="form-control" id="registerInputLastname" placeholder="Last name">
+      <div class="form-group form-group-lg has-feedback">
+        <label for="registerInputLastname" class="control-label">Last name</label>
+        <input type="text" class="form-control" id="registerInputLastname" placeholder="Last name" required>
+        <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
+        <div class="help-block with-errors"></div>
       </div>
-      <div class="form-group form-group-lg">
-          <div class="input-group">
-            <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-            <input type="password" class="form-control" id="registerInputPassword" placeholder="Enter password">
-          </div>
-        </div>
-      <div class="form-group form-group-lg">
-        <div class="input-group">
-          <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-          <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm password">
+      <div class="form-group form-group-lg has-feedback">
+        <label for="registerInputUsername" class="control-label">Username</label>
+          <input type="text" class="form-control" id="registerInputUsername" placeholder="Username" data-minlength="4" required>
+        <div class="help-block">Minimum of 4 characters</div>
+          <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
+        <div class="help-block with-errors"></div>
         </div>
       </div>
-      <div class="form-check">
-        <label class="form-check-label form-check-label-lg">
-          <input class="form-check-input" type="checkbox" value="">
-          I have read and accept the <a href="#">ToS</href></a>
-        </label>
-      <button type="button" class="btn btn-default btn-lg btn-block"><strong>Register</strong></button>
+      <div class="form-group form-group-lg has-feedback">
+        <label for="registerInputPassword" class="control-label">Password</label>
+            <input type="password" class="form-control" id="registerInputPassword" placeholder="Enter password" data-minlength="6" required>
+        <div class="help-block">Minimum of 6 characters</div>
+        <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
+        <div class="help-block with-errors"></div>
+        </div>
+      <div class="form-group form-group-lg has-feedback">
+        <label for="registerconfirmpassword" class="control-label">Confirm password</label>
+          <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm password"
+                 data-match="#registerInputPassword" data-match-error="Whoops, your passwords don't match" required>
+        <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
+        <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="registerCheckbox" data-error="You must accept our ToS in order to create an account." required>
+            I have read and accept the <a href="#">ToS</href></a>
+          </label>
+          <div class="help-block with-errors"></div>
+        </div>
+        </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-default btn-lg btn-block"><strong>Register</strong></button>
+      </div>
     </form>
 
 
