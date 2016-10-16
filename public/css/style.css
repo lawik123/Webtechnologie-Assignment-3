@@ -55,4 +55,8 @@ h1 {
   color: red;
 }
 
+.navbar-inverse .navbar-nav>li>a.netflixText:hover {
+  color: white;
+}
+
 
