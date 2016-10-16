@@ -1,3 +1,4 @@
+<!--TODO: add a live check for username availablility?-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -84,8 +85,8 @@
         <input type="text" class="form-control" id="registerInputPrefixName" placeholder="Last-name prefix">
       </div>
       <div class="form-group form-group-lg has-feedback">
-        <label for="registerInputLastname" class="control-label">Last name</label>
-        <input type="text" class="form-control" id="registerInputLastname" placeholder="Last name" required>
+        <label for="registerInputLastName" class="control-label">Last name</label>
+        <input type="text" class="form-control" id="registerInputLastName" placeholder="Last name" required>
         <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
         <div class="help-block with-errors"></div>
       </div>
@@ -122,9 +123,29 @@
         </div>
         </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-default btn-lg btn-block"><strong>Register</strong></button>
+        <button type="button" class="btn btn-default btn-lg btn-block" id="registerButton"><strong>Register</strong></button>
       </div>
     </form>
+
+    <div id="userNameConflictModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Whoops</h4>
+          </div>
+          <div class="modal-body">
+            <p>Your chosen username already exists.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="loginModal" role="dialog">
       <div class="modal-dialog">
@@ -161,7 +182,8 @@
 
     <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/lscache.js"></script>
-    <script src="js/login.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/register.js"></script>
   </body>
 </html>

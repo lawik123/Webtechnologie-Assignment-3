@@ -1,6 +1,7 @@
 /**
  * Created by Lawik Ayoub on 15-Oct-16.
  */
+
 $(document).ready(function() {
     if(lscache.get("tokenData")){
         $("#loginBtn").addClass("hidden");
@@ -16,7 +17,6 @@ $(document).ready(function() {
         $("#helpBlock1").remove();
         $("#loginModalPasswordForm").removeClass("has-error");
         $("#helpBlock2").remove();
-        var user = $("#username").val()
         $.ajax({
             url: "http://localhost:3000/api/authenticate",
             type: "POST",
@@ -24,7 +24,7 @@ $(document).ready(function() {
             dataType: "json",
             success: function (result) {
                 console.log(result.token);
-                lscache.set('tokenData',{'tokenKey':result.token,'userName':user},30);
+                lscache.set('tokenData',{'tokenKey':result.token,'userName':$("#username").val()},30);
                 location.reload(true);
             },
             error: function (xhr, status, error) {
