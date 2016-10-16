@@ -19,16 +19,12 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="js/jquery-3.1.1.js"></script>
-    <script src="js/community.js"></script>
-    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js" rel="script">-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                  data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -46,7 +42,18 @@
           </ul>
           <form class="navbar-form navbar-right">
             <form class="navbar-form navbar-left">
-              <button id="loginBtn" type="submit" class="btn btn-default loginStyle">Sign In</button>
+              <button id="loginBtn" type="button" class="btn btn-default loginStyle" data-toggle="modal" data-target="#loginModal">Sign In</button>
+              <div class="btn-group hidden" id="navUser">
+                <button id="navUserButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="glyphicon glyphicon-user"></span> <span id="navUsernameButton">lol</span> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">My ratings</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#" id="navLogoutButton">Logout</a></li>
+                </ul>
+              </div>
             </form>
             <form class="navbar-form navbar-right">
               <div class="form-group">
@@ -118,7 +125,43 @@
         <button type="submit" class="btn btn-default btn-lg btn-block"><strong>Register</strong></button>
       </div>
     </form>
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" role="dialog">
+      <div class="modal-dialog">
 
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="padding:35px 50px;">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+          </div>
+          <div class="modal-body" style="padding:40px 50px;">
+            <form role="form">
+              <div class="form-group" id="loginModalUsernameForm">
+                <label for="username"><span class="glyphicon glyphicon-user"></span> Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
+              </div>
+              <div class="form-group" id="loginModalPasswordForm">
+                <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password">
+              </div>
+              <button id="loginModalButton" type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+            <p>Not a member? <a href="register.html">Sign Up</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
 
+    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/lscache.js"></script>
+    <script src="js/login.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
   </body>
 </html>

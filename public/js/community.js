@@ -1,7 +1,6 @@
 /**
  * Created by Lawik Ayoub on 14-Oct-16.
  */
-//TODO: get token from localstorage
 //TODO: sort users in alphabetical order
 //TODO: onclick for table content which leads to the user profile of the selected user
 $(document).ready(function(){
@@ -21,17 +20,20 @@ $(document).ready(function(){
             }
 
         },
-        error: function (request,status,error) {
-            if(request.status===401){
+        error: function (xhr,status,error) {
+            if(xhr.status===401){
                 // $("#table-content").hide();
                 $(".table").hide();
-                $("#table-description").append("Please <a href='#'>Login</a> to use this feature.");
+                $("#table-description").append("Please <a href='#'>Login</a> to use this feature.").attr({"data-toggle":"modal","data-target":"#loginModal"});
             }
         },
         beforeSend: setHeader
     })
     function setHeader(xhr) {
-        xhr.setRequestHeader("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imxhd2lrMSIsImlhdCI6MTQ3NjQ3ODM0MywiZXhwIjoxNDc2NDgwMTQzfQ.0J4x54O6rqggmZPrNHIO9wHChu53Oi68cPYMcu7vKcY")
+        if(lscache.get("tokenData")){
+            xhr.setRequestHeader("Authorization", lscache.get("tokenData").tokenKey);
+
+        }
     }
 
 });
