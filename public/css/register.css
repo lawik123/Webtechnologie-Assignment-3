@@ -4,17 +4,9 @@ body {
   padding-left:75px;
   padding-right:75px;
 }
-.btn-default:hover{
-  background-color: red;
-  color: white;
-}
 
 .btn-default:focus{
   outline:none!important;
-}
-
-a{
-  color: white;
 }
 
 a:hover{
@@ -22,7 +14,19 @@ a:hover{
 }
 
 a:focus{
-  color:red;
+   color:red;
+ }
+
+h1 {
+  margin: 1%;
 }
+
+.backgroundRes {
+  margin: 5%;
+  background-color: #191919;
+  padding: 5% 10%;
+}
+
+
 
 

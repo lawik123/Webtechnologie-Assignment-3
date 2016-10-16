@@ -40,6 +40,11 @@ h1 {
   color: red;
 }
 
+.navbar-inverse .navbar-nav>li.active>a.netflixText {
+  background-color: red;
+  color: white;
+}
+
 .loginStyle {
   color: white;
   background-color: red;
