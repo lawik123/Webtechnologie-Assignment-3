@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c04d2f7-a132-4320-9865-549cd5cd83eb" name="Default" comment="">
-<<<<<<< Updated upstream
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/register.js" />
-=======
->>>>>>> Stashed changes
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/community.html" afterPath="$PROJECT_DIR$/public/community.html" />
-<<<<<<< Updated upstream
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/login.js" afterPath="$PROJECT_DIR$/public/js/login.js" />
-=======
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/register.css" afterPath="$PROJECT_DIR$/public/css/register.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
->>>>>>> Stashed changes
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/register.html" afterPath="$PROJECT_DIR$/public/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/community.js" afterPath="$PROJECT_DIR$/public/js/community.js" />
     </list>
     <ignored path="Assignment3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,16 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="300">
+            <state relative-caret-position="1914">
               <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
-=======
-            <state relative-caret-position="533">
-              <caret line="118" column="9" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
->>>>>>> Stashed changes
               <folding>
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -58,7 +40,6 @@
           </provider>
         </entry>
       </file>
-<<<<<<< Updated upstream
       <file leaf-file-name="community.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/community.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,7 +48,7 @@
               <folding>
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#4270#4277#0" expanded="true" />
+                <element signature="e#4282#4289#0" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -77,8 +58,8 @@
       <file leaf-file-name="community.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/community.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="134">
+              <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
               <folding>
                 <element signature="e#0#47#0" expanded="false" />
               </folding>
@@ -99,36 +80,19 @@
       <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
+            <state relative-caret-position="352">
               <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-=======
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="160" column="31" selection-start-line="160" selection-start-column="31" selection-end-line="160" selection-end-column="31" />
->>>>>>> Stashed changes
               <folding>
                 <element signature="e#0#47#0" expanded="false" />
-                <element signature="e#3062#3402#0" expanded="false" />
-                <element signature="e#3491#3909#0" expanded="false" />
-                <element signature="e#4040#4295#0" expanded="false" />
-                <element signature="e#5438#5744#0" expanded="false" />
-                <element signature="e#5852#6242#0" expanded="false" />
-                <element signature="e#6331#8234#0" expanded="false" />
-                <element signature="e#8328#10252#0" expanded="false" />
-                <element signature="e#10352#11697#0" expanded="false" />
-                <element signature="e#12008#12103#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< Updated upstream
       <file leaf-file-name="jquery-3.1.1.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/jquery-3.1.1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
+            <state relative-caret-position="352">
               <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -137,29 +101,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/register.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="57" selection-start-line="0" selection-start-column="57" selection-end-line="0" selection-end-column="57" />
               <folding>
-                <element signature="e#7164#7171#0" expanded="true" />
+                <element signature="e#7241#7248#0" expanded="true" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#7853#7860#0" expanded="true" />
+                <element signature="e#7930#7937#0" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-=======
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#7208#7215#0" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
->>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -168,23 +120,17 @@
       <file leaf-file-name="register.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/register.css">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="432">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-=======
-            <state relative-caret-position="561">
+            <state relative-caret-position="638">
               <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
->>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< Updated upstream
-      <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-514">
+            <state relative-caret-position="550">
               <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding>
                 <element signature="e#0#47#0" expanded="false" />
@@ -197,7 +143,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
+            <state relative-caret-position="2860">
               <caret line="164" column="61" selection-start-line="164" selection-start-column="61" selection-end-line="164" selection-end-column="74" />
               <folding>
                 <element signature="e#0#47#0" expanded="false" />
@@ -211,14 +157,6 @@
                 <element signature="e#10352#11697#0" expanded="false" />
                 <element signature="e#12008#12103#0" expanded="false" />
               </folding>
-=======
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding />
->>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -258,31 +196,25 @@
         <option value="$PROJECT_DIR$/modules/initdb.js" />
         <option value="$PROJECT_DIR$/modules/initdb.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/public/Community.html" />
         <option value="$PROJECT_DIR$/public/js/Community.js" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/public/register.css" />
         <option value="$PROJECT_DIR$/public/css/community.css" />
+        <option value="$PROJECT_DIR$/public/css/register.css" />
         <option value="$PROJECT_DIR$/public/js/lscahce.min.js" />
         <option value="$PROJECT_DIR$/public/js/ls.js" />
         <option value="$PROJECT_DIR$/public/js/lscache.js" />
-        <option value="$PROJECT_DIR$/public/js/community.js" />
         <option value="$PROJECT_DIR$/public/js/jquery-3.1.1.js" />
-<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/js/regoster.js" />
         <option value="$PROJECT_DIR$/public/js/register.js" />
         <option value="$PROJECT_DIR$/public/js/login.js" />
         <option value="$PROJECT_DIR$/public/community.html" />
-=======
-        <option value="$PROJECT_DIR$/public/community.html" />
-        <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/public/js/register.js" />
->>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/public/register.html" />
-        <option value="$PROJECT_DIR$/public/css/register.css" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/js/community.js" />
       </list>
     </option>
   </component>
@@ -298,10 +230,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-16" />
-    <option name="y" value="-16" />
-    <option name="width" value="3872" />
-    <option name="height" value="2092" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -328,37 +260,46 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< Updated upstream
       <pane id="Scratches" />
-      <pane id="Scope" />
-=======
-      <pane id="PackagesPane" />
->>>>>>> Stashed changes
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webtech3" />
+              <option name="myItemId" value="Webtechnologie-Assignment-3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webtech3" />
+              <option name="myItemId" value="Webtechnologie-Assignment-3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webtech3" />
+              <option name="myItemId" value="Webtechnologie-Assignment-3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webtech3" />
+              <option name="myItemId" value="Webtechnologie-Assignment-3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webtech3" />
+              <option name="myItemId" value="Webtechnologie-Assignment-3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Webtechnologie-Assignment-3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Webtechnologie-Assignment-3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -368,11 +309,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webtech3" />
+              <option name="myItemId" value="Webtechnologie-Assignment-3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webtech3" />
+              <option name="myItemId" value="Webtechnologie-Assignment-3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -386,11 +327,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webtech3" />
+              <option name="myItemId" value="Webtechnologie-Assignment-3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webtech3" />
+              <option name="myItemId" value="Webtechnologie-Assignment-3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -404,12 +345,8 @@
           </PATH>
         </subPane>
       </pane>
-<<<<<<< Updated upstream
-      <pane id="PackagesPane" />
-=======
-      <pane id="Scratches" />
       <pane id="Scope" />
->>>>>>> Stashed changes
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -948,14 +885,10 @@
       <workItem from="1476470091857" duration="8284000" />
       <workItem from="1476479109911" duration="55000" />
       <workItem from="1476545102521" duration="4418000" />
-<<<<<<< Updated upstream
       <workItem from="1476561814150" duration="17947000" />
       <workItem from="1476581227800" duration="21000" />
       <workItem from="1476622241656" duration="3265000" />
-=======
-      <workItem from="1476561814150" duration="17631000" />
-      <workItem from="1476619855659" duration="4562000" />
->>>>>>> Stashed changes
+      <workItem from="1476625850083" duration="49000" />
     </task>
     <servers />
   </component>
@@ -992,14 +925,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< Updated upstream
-    <option name="totallyTimeSpent" value="142751000" />
-=======
-    <option name="totallyTimeSpent" value="143711000" />
->>>>>>> Stashed changes
+    <option name="totallyTimeSpent" value="142800000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1008,21 +937,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44091415" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44127333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-<<<<<<< Updated upstream
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44127333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16657753" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> Stashed changes
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1092,10 +1013,6 @@
             <element signature="e#3062#3402#0" expanded="false" />
             <element signature="e#3491#3909#0" expanded="false" />
             <element signature="e#4040#4295#0" expanded="false" />
-<<<<<<< Updated upstream
-=======
-            <element signature="e#4378#5338#0" expanded="false" />
->>>>>>> Stashed changes
             <element signature="e#5438#5744#0" expanded="false" />
             <element signature="e#5852#6242#0" expanded="false" />
             <element signature="e#6331#8234#0" expanded="false" />
@@ -1137,10 +1054,6 @@
             <element signature="e#3062#3402#0" expanded="false" />
             <element signature="e#3491#3909#0" expanded="false" />
             <element signature="e#4040#4295#0" expanded="false" />
-<<<<<<< Updated upstream
-=======
-            <element signature="e#4378#5338#0" expanded="false" />
->>>>>>> Stashed changes
             <element signature="e#5438#5744#0" expanded="false" />
             <element signature="e#5852#6242#0" expanded="false" />
             <element signature="e#6331#8234#0" expanded="false" />
@@ -1181,10 +1094,6 @@
             <element signature="e#3062#3402#0" expanded="false" />
             <element signature="e#3491#3909#0" expanded="false" />
             <element signature="e#4040#4295#0" expanded="false" />
-<<<<<<< Updated upstream
-=======
-            <element signature="e#4378#5338#0" expanded="false" />
->>>>>>> Stashed changes
             <element signature="e#5438#5744#0" expanded="false" />
             <element signature="e#5852#6242#0" expanded="false" />
             <element signature="e#6331#8234#0" expanded="false" />
@@ -1204,10 +1113,6 @@
             <element signature="e#3062#3402#0" expanded="false" />
             <element signature="e#3491#3909#0" expanded="false" />
             <element signature="e#4040#4295#0" expanded="false" />
-<<<<<<< Updated upstream
-=======
-            <element signature="e#4378#5338#0" expanded="false" />
->>>>>>> Stashed changes
             <element signature="e#5438#5744#0" expanded="false" />
             <element signature="e#5852#6242#0" expanded="false" />
             <element signature="e#6331#8234#0" expanded="false" />
@@ -1227,10 +1132,6 @@
             <element signature="e#3062#3402#0" expanded="false" />
             <element signature="e#3491#3909#0" expanded="false" />
             <element signature="e#4040#4295#0" expanded="false" />
-<<<<<<< Updated upstream
-=======
-            <element signature="e#4378#5338#0" expanded="false" />
->>>>>>> Stashed changes
             <element signature="e#5438#5744#0" expanded="false" />
             <element signature="e#5852#6242#0" expanded="false" />
             <element signature="e#6331#8234#0" expanded="false" />
@@ -1250,10 +1151,6 @@
             <element signature="e#3062#3402#0" expanded="false" />
             <element signature="e#3491#3909#0" expanded="false" />
             <element signature="e#4040#4295#0" expanded="false" />
-<<<<<<< Updated upstream
-=======
-            <element signature="e#4378#5338#0" expanded="false" />
->>>>>>> Stashed changes
             <element signature="e#5438#5744#0" expanded="false" />
             <element signature="e#5852#6242#0" expanded="false" />
             <element signature="e#6331#8234#0" expanded="false" />
@@ -1352,7 +1249,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/register.css" />
-<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="902">
@@ -1360,10 +1256,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/lscache.min.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/lscahce.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/lscache.js">
-=======
     <entry file="file://$PROJECT_DIR$/public/js/lscache.min.js" />
     <entry file="file://$PROJECT_DIR$/public/js/lscahce.js" />
     <entry file="file://$PROJECT_DIR$/public/js/lscache.js">
@@ -1378,47 +1270,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="83" column="42" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/community.css">
->>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/test/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="83" column="42" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
-        </state>
-=======
-    <entry file="file://$PROJECT_DIR$/public/index.js" />
-    <entry file="file://$PROJECT_DIR$/public/notflixbg.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
->>>>>>> Stashed changes
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/community.css">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="0">
-          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-=======
-        <state relative-caret-position="48">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
->>>>>>> Stashed changes
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/public/index.js" />
     <entry file="file://$PROJECT_DIR$/public/notflixbg.jpg">
       <provider selected="true" editor-type-id="images">
@@ -1427,7 +1288,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
+        <state relative-caret-position="2860">
           <caret line="164" column="61" selection-start-line="164" selection-start-column="61" selection-end-line="164" selection-end-column="74" />
           <folding>
             <element signature="e#0#47#0" expanded="false" />
@@ -1440,19 +1301,10 @@
             <element signature="e#8328#10252#0" expanded="false" />
             <element signature="e#10352#11697#0" expanded="false" />
             <element signature="e#12008#12103#0" expanded="false" />
-=======
-    <entry file="file://$PROJECT_DIR$/public/js/community.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-922">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#47#0" expanded="false" />
->>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/public/js/lscache.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -1463,12 +1315,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="1914">
           <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
           <folding>
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#3937#3944#0" expanded="true" />
+            <element signature="e#3919#3926#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -1476,99 +1328,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/register.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="638">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
-=======
-    <entry file="file://$PROJECT_DIR$/public/community.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="101" column="29" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#4340#4347#0" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="48" column="3" selection-start-line="3" selection-start-column="0" selection-end-line="48" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#47#0" expanded="false" />
-          </folding>
->>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/jquery-3.1.1.js">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="616">
+        <state relative-caret-position="352">
           <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-=======
-        <state relative-caret-position="592">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
->>>>>>> Stashed changes
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/public/js/community.js">
+    <entry file="file://$PROJECT_DIR$/public/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="160" column="31" selection-start-line="160" selection-start-column="31" selection-end-line="160" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#47#0" expanded="false" />
-            <element signature="e#3062#3402#0" expanded="false" />
-            <element signature="e#3491#3909#0" expanded="false" />
-            <element signature="e#4040#4295#0" expanded="false" />
-            <element signature="e#5438#5744#0" expanded="false" />
-            <element signature="e#5852#6242#0" expanded="false" />
-            <element signature="e#6331#8234#0" expanded="false" />
-            <element signature="e#8328#10252#0" expanded="false" />
-            <element signature="e#10352#11697#0" expanded="false" />
-            <element signature="e#12008#12103#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
->>>>>>> Stashed changes
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7208#7215#0" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/register.css">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="86">
+        <state relative-caret-position="352">
           <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
           <folding>
             <element signature="e#0#47#0" expanded="false" />
@@ -1576,68 +1354,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-514">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#47#0" expanded="false" />
-            <element signature="e#2340#3099#0" expanded="false" />
-          </folding>
-=======
-        <state relative-caret-position="561">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
->>>>>>> Stashed changes
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/community.html">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#4270#4277#0" expanded="true" />
-=======
-        <state relative-caret-position="533">
-          <caret line="118" column="9" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
-          <folding>
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#3919#3926#0" expanded="true" />
->>>>>>> Stashed changes
+            <element signature="e#4282#4289#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/public/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="57" selection-start-line="0" selection-start-column="57" selection-end-line="0" selection-end-column="57" />
           <folding>
-            <element signature="e#7164#7171#0" expanded="true" />
+            <element signature="e#7241#7248#0" expanded="true" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7853#7860#0" expanded="true" />
+            <element signature="e#7930#7937#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-=======
->>>>>>> Stashed changes
+    <entry file="file://$PROJECT_DIR$/public/js/community.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#47#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#47#0" expanded="false" />
+            <element signature="e#2340#3099#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
