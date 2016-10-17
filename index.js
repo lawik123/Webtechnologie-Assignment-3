@@ -380,6 +380,16 @@ apiRoutes.get('/personalratings',function (req,res) {
 
 });
 
+//request to retrieve a list of all the movies movies and displays the rating for each movie
+apiRoutes.get('/personalratings2',function (req,res) {
+    Movie.find({},{'ratings':{$elemMatch:{'userName':req.decoded.userName}},'__v':0,'ratings.userName':0}).sort({'_id':1}).exec(function (err, results) {
+        if (err) return console.error(err);
+        res.status(200).send(results);
+
+    })
+
+});
+
 app.use('/api', apiRoutes);
 
 

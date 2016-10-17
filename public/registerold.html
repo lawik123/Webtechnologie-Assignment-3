@@ -74,51 +74,57 @@
       <small>Not a problem!</small>
     </h1>
     <h2>Register your <strong>free</strong> account below</h2>
-    <form id="registerForm" role="form"  class="backgroundRes" >
-      <div class="form-group form-group-lg" id="registerInputFirstNameForm">
+    <form id="registerForm" role="form" data-toggle="validator" >
+      <div class="form-group form-group-lg has-feedback">
         <label for="registerInputFirstName" class="control-label">First name</label>
-        <input type="text" class="form-control" id="registerInputFirstName" placeholder="First name">
+        <input type="text" class="form-control" id="registerInputFirstName" placeholder="First name" required>
         <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
+        <div class="help-block with-errors"></div>
       </div>
       <div class="form-group form-group-lg">
         <label for="registerInputPrefixName" class="control-label">Last-name prefix</label>
         <input type="text" class="form-control" id="registerInputPrefixName" placeholder="Last-name prefix">
       </div>
-      <div class="form-group form-group-lg" id="registerInputLastNameForm">
+      <div class="form-group form-group-lg has-feedback">
         <label for="registerInputLastName" class="control-label">Last name</label>
-        <input type="text" class="form-control" id="registerInputLastName" placeholder="Last name" >
+        <input type="text" class="form-control" id="registerInputLastName" placeholder="Last name" required>
         <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
+        <div class="help-block with-errors"></div>
       </div>
-      <div class="form-group form-group-lg" id="registerInputUsernameForm">
+      <div class="form-group form-group-lg has-feedback">
         <label for="registerInputUsername" class="control-label">Username</label>
-        <input type="text" class="form-control" id="registerInputUsername" placeholder="Username">
+          <input type="text" class="form-control" id="registerInputUsername" placeholder="Username" data-minlength="4" required>
         <div class="help-block">Minimum of 4 characters</div>
-        <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
+          <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
+        <div class="help-block with-errors"></div>
+        </div>
       </div>
-      </div>
-      <div class="form-group form-group-lg " id="registerInputPasswordForm">
+      <div class="form-group form-group-lg has-feedback">
         <label for="registerInputPassword" class="control-label">Password</label>
-        <input type="password" class="form-control" id="registerInputPassword" placeholder="Enter password">
+            <input type="password" class="form-control" id="registerInputPassword" placeholder="Enter password" data-minlength="6" required>
         <div class="help-block">Minimum of 6 characters</div>
         <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
-      </div>
-      <div class="form-group form-group-lg" id="registerInputConfirmPasswordForm">
+        <div class="help-block with-errors"></div>
+        </div>
+      <div class="form-group form-group-lg has-feedback">
         <label for="registerconfirmpassword" class="control-label">Confirm password</label>
-        <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm password"
-               data-match="#registerInputPassword" data-match-error="Whoops, your passwords don't match" >
+          <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm password"
+                 data-match="#registerInputPassword" data-match-error="Whoops, your passwords don't match" required>
         <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
-      </div>
-      </div>
-      <div class="form-group" id="registerCheckboxGroup">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" id="registerCheckbox">
-            I have read and accept the <a href="#">ToS</href></a>
-          </label>
+        <div class="help-block with-errors"></div>
         </div>
       </div>
       <div class="form-group">
-        <button type="button" class="btn btn-default btn-lg btn-block" id="registerButton"><strong>Register</strong></button>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="registerCheckbox" data-error="You must accept our ToS in order to create an account." required>
+            I have read and accept the <a href="#">ToS</href></a>
+          </label>
+          <div class="help-block with-errors"></div>
+        </div>
+        </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-default btn-lg btn-block" id="registerButton"><strong>Register</strong></button>
       </div>
     </form>
 
@@ -135,7 +141,7 @@
             <p>Your chosen username already exists.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
 
@@ -166,7 +172,7 @@
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-            <p>Not a member? <a href="register.html">Sign Up</a></p>
+            <p>Not a member? <a href="registerold.html">Sign Up</a></p>
           </div>
         </div>
       </div>
@@ -177,7 +183,8 @@
 
     <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/lscache.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
     <script src="js/login.js"></script>
-    <script src="js/register.js"></script>
+    <script src="js/registerold.js"></script>
   </body>
 </html>
