@@ -9,3 +9,5 @@ a:hover{
 a:focus{
   color:red;
 }
+
+tr:not(#table-header){ cursor: pointer; }

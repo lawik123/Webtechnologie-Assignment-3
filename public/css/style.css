@@ -1,6 +1,16 @@
-body {
-  padding-top: 75px;
+html,body {
+  /*padding-top: 75px;*/
+  position: relative;
+  height:100%;
 }
+.container-fluid {
+  /*min-height: 100%;*/
+  height: 100%;
+  /*overflow-y: hidden; !* don't show content that exceeds my height *!*/
+}
+
+#section1 {color: #fff; background-image: url("../notflixbg.jpg") ;}
+#section2 {color: #fff; background-color: #673ab7;}
 .backgroundHome {
   padding-top: 40px;
   text-align: left;
