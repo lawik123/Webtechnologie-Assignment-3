@@ -27,7 +27,7 @@ $(document).ready(function(){
                 // console.log(getImage(val.title));
                 // console.log(poster);
                 if(ratingsCounter===4){
-                    ratingsCounter =1
+                    ratingsCounter = 1;
                     $("#home").append("<div class='row'><div class='col-md-3 col-sm-6'>" +
                         "<div class='movie-item'>" +
                         "<div>" +

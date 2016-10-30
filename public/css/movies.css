@@ -6,7 +6,7 @@ h1{
   margin-top: 0;
 }
 
-.movie-item{
+.movie-item {
   /*cursor: pointer;*/
   position:relative;
   overflow:hidden;

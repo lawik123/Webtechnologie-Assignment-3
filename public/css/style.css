@@ -9,8 +9,21 @@ html,body {
   /*overflow-y: hidden; !* don't show content that exceeds my height *!*/
 }
 
-#section1 {color: #fff; background-image: url("../notflixbg.jpg") ;}
-#section2 {color: #fff; background-color: #673ab7;}
+.movie-item {
+  /*cursor: pointer;*/
+  position:absolute;
+  overflow:hidden;
+}
+
+#section1 {
+  color: #fff;
+  background-image: url("../notflixbg.jpg");
+  padding-top: 20%;
+}
+#section2 {
+  color: #fff;
+  background-color: #000000;
+}
 .backgroundHome {
   padding-top: 40px;
   text-align: left;
@@ -22,8 +35,7 @@ html,body {
   background-image: url("../notflixbg.jpg");
 }
 
-h1 {
-  margin: 17% 1% 0% 1%;
+h1.textHome {
   line-height: 1.1em;
   font-size: 450%;
   top: 60%;
@@ -68,5 +80,68 @@ h1 {
 .navbar-inverse .navbar-nav>li>a.netflixText:hover {
   color: white;
 }
+
+.floatLeft {
+  margin-top: 15%;
+  background-color: #191919;
+  float: left;
+  width: 40%;
+}
+
+#topFive {
+  position: relative;
+  padding-left: 20%;
+  padding-right: 10%;
+  padding-top: 5%;
+  float: right;
+  width: 60%;
+  height: 80%;
+}
+
+#topFive img {
+  position: absolute;
+  display: none;
+}
+
+#topFive img.active {
+  display: block;
+  width: inherit;
+  height: inherit;
+}
+
+.imgContainer {
+  width: 100%;
+  float: left;
+  border-color: white;
+  border: dashed;
+  height: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+
+  #section1 {
+    padding-top: 35%;
+  }
+
+  .slogan {
+    font-size: 180%;
+  }
+
+  h1.textHome {
+    font-size: 330%;
+
+  }
+
+  .floatLeft {
+    width: 100%;
+  }
+
+  #topFive {
+    padding: 5%;
+    width: 100%;
+    height: 80%;
+  }
+}
+
 
 

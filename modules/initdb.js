@@ -155,7 +155,7 @@ module.exports = function (){
         firstName: 'test',
         userName: 'test',
         password: 'test'
-    })
+    });
 
     newUser.save(function (err) {
         if(err) throw err;
