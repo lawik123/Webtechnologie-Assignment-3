@@ -4,6 +4,10 @@
 //TODO: sort users in alphabetical order
 //TODO: onclick for table content which leads to the user profile of the selected user
 $(document).ready(function(){
+    if(lscache.get("tokenData")) {
+        $(".nav.navbar-nav>li#registerNav").hide();
+    }
+
     $.ajax({
         url:"http://localhost:3000/api/userlist",
         type:"GET",

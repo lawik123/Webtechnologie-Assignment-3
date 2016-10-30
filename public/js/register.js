@@ -2,6 +2,10 @@
  * Created by Lawik Ayoub on 16-Oct-16.
  */
 $(document).ready(function () {
+    if(lscache.get("tokenData")) {
+        $(".nav.navbar-nav").append("<li><a class='netflixText' href='community.html'>Community <span class='sr-only'></span></a></li>")
+        $(".nav.navbar-nav>li#registerNav").hide();
+    }
     $("#registerInputUsername").on('input',function () {
         if($(this).val().length<4){
             $("#registerInputUsernameForm").addClass("has-error")

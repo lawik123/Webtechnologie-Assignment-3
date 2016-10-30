@@ -13,6 +13,11 @@ $(document).ready(function () {
         }, "slow");
     });
 
+    if(lscache.get("tokenData")) {
+        $(".nav.navbar-nav").append("<li><a class='netflixText' href='community.html'>Community <span class='sr-only'></span></a></li>")
+        $(".nav.navbar-nav>li#registerNav").hide();
+    }
+
     var first = 0;
     var moviecounter = 0;
 

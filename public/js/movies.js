@@ -3,9 +3,11 @@ $(document).ready(function(){
  var normalCounter = 0;
     var myMoviesCounter = 0;
     if(lscache.get("tokenData")){
-        $(".nav-tabs").append("<li><a data-toggle='tab' href='#myMovies'>My movies</a></li>")
+        $(".nav-tabs").append("<li><a data-toggle='tab' href='#myMovies'>My movies</a></li>");
         $(".tab-content").append("<div id='myMovies' class='tab-pane fade '></div>");
         $("#myMovies").append(" <div class='row'></div>");
+        $(".nav.navbar-nav").append("<li><a class='netflixText' href='community.html'>Community <span class='sr-only'></span></a></li>");
+        $(".nav.navbar-nav>li#registerNav").hide();
 
         $.ajax( {
             url: "http://localhost:3000/api/personalratings2",
