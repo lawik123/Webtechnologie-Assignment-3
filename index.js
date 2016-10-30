@@ -218,7 +218,9 @@ apiRoutes.get('/userlist/:username',function (req,res) {
 
 //request to add a rating to a movie
 apiRoutes.post('/addrating', function (req,res) {
-    movie = Movie.findById({_id:req.body._id},function (err,results) {
+    movie = Movie.findById({_id:parseFloat(req.body._id)},function (err,results) {
+        console.log(req.body._id);
+        console.log(req.body.rating);
         if(results===null||results.length===0){
                 res.status(404).send({
                     success: false,
@@ -243,14 +245,14 @@ apiRoutes.post('/addrating', function (req,res) {
                 });
             }
             else {
-                var rating = req.body.rating;
+                var rating = parseFloat(req.body.rating);
                 if(rating===0.5||rating===1||rating===1.5||rating===2||rating===2.5||rating===3
                     ||rating===3.5||rating===4||rating===4.5||rating==5) {
                     movie.update({
                         $addToSet: {
                             "ratings": {
                                 userName: req.decoded.userName,
-                                rating: req.body.rating
+                                rating: parseFloat(req.body.rating)
                             }
                         }
                     }, function (err, results) {
@@ -273,7 +275,8 @@ apiRoutes.post('/addrating', function (req,res) {
 
 //request to change a rating of a movie
 apiRoutes.put('/changerating', function (req,res) {
-    movie = Movie.findById({_id:req.body._id},function (err,results) {
+    movie = Movie.findById({_id:parseFloat(req.body._id)},function (err,results) {
+        console.log("test"+req.body.id);
         if(results===null){
             res.status(404).send({
                 success: false,
@@ -298,14 +301,14 @@ apiRoutes.put('/changerating', function (req,res) {
                 });
             }
             else {
-                var rating = req.body.rating;
+                var rating = parseFloat(req.body.rating);
                 if(rating===0.5||rating===1||rating===1.5||rating===2||rating===2.5||rating===3
                     ||rating===3.5||rating===4||rating===4.5||rating==5) {
                     movie.update({ratings: {$elemMatch: {userName: req.decoded.userName}}}, {
                         $set: {
                             "ratings.$": {
                                 userName: req.decoded.userName,
-                                rating: req.body.rating
+                                rating: parseFloat(req.body.rating)
                             }
                         }
                     }, function (err, results) {

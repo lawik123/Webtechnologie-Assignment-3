@@ -32,7 +32,6 @@ $(document).ready(function(){
     function setHeader(xhr) {
         if(lscache.get("tokenData")){
             xhr.setRequestHeader("Authorization", lscache.get("tokenData").tokenKey);
-
         }
     }
 

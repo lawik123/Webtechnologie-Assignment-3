@@ -12,8 +12,6 @@ h1{
   overflow:hidden;
 }
 
-
-
 img{
   width: 100%;
 
@@ -55,6 +53,7 @@ img{
 /*}*/
 
 .caption h3 {
+  background:rgba(000, 000, 000, 0.3);
   color: #fff;
   -webkit-font-smoothing: antialiased;
 }
@@ -74,8 +73,10 @@ p{
 
 }
 
+
+.dropdown-toggle:active, .open .dropdown-toggle {background:#424242 !important;}
 .btn-primary{
-  background-color: red;
+  background-color: #424242;
   border: none;
   outline:none!important;
 }
@@ -95,6 +96,15 @@ p{
 .nav-tabs > li.active>a {
   background-color: red !important;
 
+}
+
+.btn-group-justified > .btn-group {
+  float: none;
+  display: table-cell;
+  width: 1%;
+}
+.btn-group-justified > .btn-group > .dropdown-menu {
+  width: 100%;
 }
 
 
