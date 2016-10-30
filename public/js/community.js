@@ -14,7 +14,17 @@ $(document).ready(function(){
         dataType:"json",
         success: function (result) {
             $.each(result, function (key,val) {
-                $("#table-content").append("<tr id="+val.userName+"><td>"+val.userName+"</td></tr>")
+                $("#table-content").append("<tr id="+val.userName+"><td>"+val.userName+"</td></tr>");
+                $('#'+val.userName).click(function () {
+                    $.ajax({
+                        url:"http://localhost:3000/api/userlist/" + val.userName,
+                        type:"GET",
+                        dataType:"json",
+                        success: function (result) {
+
+                        }
+                    })
+                })
             });
             if(result.size==1){
                 $("#table-description").text("There is 1 person using Notflix");
