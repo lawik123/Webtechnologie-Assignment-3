@@ -10,7 +10,7 @@ $(document).ready(function(){
         dataType:"json",
         success: function (result) {
             $.each(result, function (key,val) {
-                $("#table-content").append("<tr><td>"+val.userName+"</td></tr>")
+                $("#table-content").append("<tr id="+val.userName+"><td>"+val.userName+"</td></tr>")
             });
             if(result.size==1){
                 $("#table-description").text("There is 1 person using Notflix");

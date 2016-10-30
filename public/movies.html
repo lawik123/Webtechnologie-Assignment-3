@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE = edge">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-    <title>Register</title>
+    <title>Movies</title>
 
     <!-- Bootstrap -->
     <link href="https://bootswatch.com/cyborg/bootstrap.min.css" rel="stylesheet">
     <!--<link href="css/style.css" rel="stylesheet" type="text/css">-->
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="css/register.css" rel="stylesheet" type="text/css">
+    <link href="css/movies.css" rel="stylesheet" type="text/css">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,8 +41,8 @@
           <ul class="nav navbar-nav">
             <li> <a class="netflixText" href="index.html">Home <span class="sr-only">(current)</span></a></li>
             <li> <a class="netflixText" href="#">Top 5 <span class="sr-only"></span></a></li>
-            <li><a class="netflixText" href="movies.html">Movies <span class="sr-only"></span></a></li>
-            <li class="active" ><a class="netflixText" href="register.html">Register <span class="sr-only"></span></a></li>
+            <li class="active"><a class="netflixText" href="movies.html">Movies <span class="sr-only"></span></a></li>
+            <li ><a class="netflixText" href="register.html">Register <span class="sr-only"></span></a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <form class="navbar-form navbar-left">
@@ -69,79 +70,35 @@
       </div><!-- /.container-fluid -->
     </nav>
 
+
   </head>
+
   <body>
-    <h1>Not a member?
-      <small>Not a problem!</small>
-    </h1>
-    <h2>Register your <strong>free</strong> account below</h2>
-    <form id="registerForm" role="form"  class="backgroundRes" >
-      <div class="form-group form-group-lg" id="registerInputFirstNameForm">
-        <label for="registerInputFirstName" class="control-label">First name</label>
-        <input type="text" class="form-control" id="registerInputFirstName" placeholder="First name">
-        <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
-      </div>
-      <div class="form-group form-group-lg">
-        <label for="registerInputPrefixName" class="control-label">Last-name prefix</label>
-        <input type="text" class="form-control" id="registerInputPrefixName" placeholder="Last-name prefix">
-      </div>
-      <div class="form-group form-group-lg" id="registerInputLastNameForm">
-        <label for="registerInputLastName" class="control-label">Last name</label>
-        <input type="text" class="form-control" id="registerInputLastName" placeholder="Last name" >
-        <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
-      </div>
-      <div class="form-group form-group-lg" id="registerInputUsernameForm">
-        <label for="registerInputUsername" class="control-label">Username</label>
-        <input type="text" class="form-control" id="registerInputUsername" placeholder="Username">
-        <div class="help-block">Minimum of 4 characters</div>
-        <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
-      </div>
-      </div>
-      <div class="form-group form-group-lg " id="registerInputPasswordForm">
-        <label for="registerInputPassword" class="control-label">Password</label>
-        <input type="password" class="form-control" id="registerInputPassword" placeholder="Enter password">
-        <div class="help-block">Minimum of 6 characters</div>
-        <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
-      </div>
-      <div class="form-group form-group-lg" id="registerInputConfirmPasswordForm">
-        <label for="registerconfirmpassword" class="control-label">Confirm password</label>
-        <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm password"
-               data-match="#registerInputPassword" data-match-error="Whoops, your passwords don't match" >
-        <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
-      </div>
-      </div>
-      <div class="form-group" id="registerCheckboxGroup">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" id="registerCheckbox">
-            I have read and accept the <a href="#">ToS</href></a>
-          </label>
-        </div>
-      </div>
-      <div class="form-group">
-        <button type="button" class="btn btn-default btn-lg btn-block" id="registerButton"><strong>Register</strong></button>
-      </div>
-    </form>
 
-    <div id="userNameConflictModal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-sm">
+    <div class="container-fluid">
+      <ul class="nav nav-tabs nav-justified">
+        <li class="active"><a data-toggle="tab" href="#home">Rated movies</a></li>
+        <li><a data-toggle="tab" href="#menu1">All movies</a></li>
+      </ul>
 
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Whoops</h4>
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <div class="row">
+
           </div>
-          <div class="modal-body">
-            <p>Your chosen username already exists.</p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+        <div id="menu1" class="tab-pane fade ">
+            <div class="row">
+            </div>
         </div>
 
       </div>
-    </div>
+      </div>
+
+
+
+
+
     <!-- Modal -->
     <div class="modal fade" id="loginModal" role="dialog">
       <div class="modal-dialog">
@@ -179,6 +136,6 @@
     <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/lscache.js"></script>
     <script src="js/login.js"></script>
-    <script src="js/register.js"></script>
+    <script src="js/movies.js"></script>
   </body>
 </html>

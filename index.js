@@ -147,7 +147,7 @@ app.get('/api/movies/:id', function (req, res) {
 
 //request to get the average rating per movie(non-rated movies are not shown)
 app.get('/api/movieratings', function (req, res) {
-    Movie.aggregate([{$project:{title:"$title",rating_average:{$avg:"$ratings.rating"},rating_amount:{$size:"$ratings"}}},{$match:{rating_amount:{$gt:0}}},]).sort({'_id':1}).exec( function (err,results) {
+    Movie.aggregate([{$project:{title:"$title",description:"$description",length:"$length",director:"$director",release:"$release",rating_average:{$avg:"$ratings.rating"},rating_amount:{$size:"$ratings"}}},{$match:{rating_amount:{$gt:0}}},]).sort({'_id':1}).exec( function (err,results) {
         res.status(200).send(results)
 
     });
