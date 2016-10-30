@@ -20,10 +20,7 @@ html,body {
   background-image: url("../notflixbg.jpg");
   padding-top: 20%;
 }
-#section2 {
-  color: #fff;
-  background-color: #000000;
-}
+
 .backgroundHome {
   padding-top: 40px;
   text-align: left;
@@ -81,34 +78,6 @@ h1.textHome {
   color: white;
 }
 
-.floatLeft {
-  margin-top: 15%;
-  background-color: #191919;
-  float: left;
-  width: 40%;
-}
-
-#topFive {
-  position: relative;
-  padding-left: 20%;
-  padding-right: 10%;
-  padding-top: 5%;
-  float: right;
-  width: 60%;
-  height: 80%;
-}
-
-#topFive img {
-  position: absolute;
-  display: none;
-}
-
-#topFive img.active {
-  display: block;
-  width: inherit;
-  height: inherit;
-}
-
 .imgContainer {
   width: 100%;
   float: left;
@@ -132,15 +101,6 @@ h1.textHome {
 
   }
 
-  .floatLeft {
-    width: 100%;
-  }
-
-  #topFive {
-    padding: 5%;
-    width: 100%;
-    height: 80%;
-  }
 }
 
 
