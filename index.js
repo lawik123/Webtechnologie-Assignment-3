@@ -330,7 +330,7 @@ apiRoutes.put('/changerating', function (req,res) {
 
 //request to remoeve a rating from a movie
 apiRoutes.delete('/removerating', function (req,res) {
-    movie = Movie.findById({_id:req.body._id},function (err,results) {
+    movie = Movie.findById({_id:parseFloat(req.body._id)},function (err,results) {
         if(results===null){
             res.status(404).send({
                 success: false,
