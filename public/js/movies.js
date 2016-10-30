@@ -17,11 +17,15 @@ $(document).ready(function(){
                 $.each(result, function (key, val) {
                     var poster;
                     var rating;
+                    var modal;
                     if(val.ratings!=undefined){
                         rating = val.ratings[0].rating;
+                        modal = "#changeRateModal"
+
                     }
                     else{
                         rating = "Not rated yet"
+                        modal = "#rateModal"
                     }
                     console.log(val.title);
                     // console.log(getImage("frozen"))
@@ -82,35 +86,16 @@ $(document).ready(function(){
                             "<button type='button' class='btn btn-primary dropdown-toggle' data-toggle='dropdown'>Info <span class='caret'></span></button>" +
                                 "<ul class='dropdown-menu drop-up' role='menu'>" +
                             "<li><button type='button' class=' btn btn-primary info-btn' '>info</button></li> " +
+                            "<li><button type='button' class=' btn btn-primary rate-btn' data-toggle='modal' data-target='"+modal+"'>Manage rating</button></li> "+
                             "</ul>"+
                             "</div></div>"+
                             "</div></div></div></div>")
-                        if(rating=="Not rated yet"){
-
-                        }
                     }
 
-                    if(rating!="Not rated yet"){
-                        $(".rate-btn").text("change rating");
-                    }
                     $(".rate-btn").on('click',function () {
                         id  = $(this).closest(".movie-item").attr("id");
                         console.log(id);
-                        // $("#rateTitle").text($(this).closest(".movie-item").find(".h3").val());
-
                     })
-
-
-                    // $(".rate-btn").on ('click',function () {
-                    //     console.log($(this).closest(".movie-item").find(".cap1").css("bottom"));
-                    //     $(".cap1").css("bottom","-100%");
-                    //     if($(this).closest(".movie-item").find(".cap1").css("bottom")!=="0px") {
-                    //         $(this).closest(".movie-item").find(".cap1").css("bottom", "0px")
-                    //     }
-                    //     // else{
-                    //     //     $(this).closest(".movie-item").find(".cap1").css("bottom", "-100%")
-                    //     // }
-                    // });
 
                 })
             },
@@ -135,58 +120,100 @@ $(document).ready(function(){
         $("#rateModalButton").click(function () {
             console.log(id);
             console.log("click")
-            if($("#rating").val()==0.5||1||1.5||2||2.5||3||3.5||4||4.5||5){
-                console.log($(".rate-btn").text())
-                if(($(".rate-btn").text()=="Add rating")){
-                $.ajax( {
+            rate = $("#rating").val();
+            if (rate == 0.5 ||rate== 1 ||rate== 1.5 ||rate== 2 ||rate== 2.5 ||rate== 3 ||rate== 3.5 ||rate== 4 ||rate== 4.5||rate== 5) {
+                $.ajax({
                     url: "http://localhost:3000/api/addrating",
                     type: "POST",
                     dataType: "json",
-                    data:{_id:id,rating:$("#rating").val()},
+                    data: {_id: id, rating: $("#rating").val()},
                     success: function (result) {
-                        $.each(result, function (key, val) {
-
-                        })
+                        location.reload(true);
                     },
                     error: function (xhr, status, error) {
 
                     },
-                    beforeSend:setHeader
+                    beforeSend: setHeader
                 })
                 function setHeader(xhr) {
                     console.log("test")
-                    if(lscache.get("tokenData")){
+                    if (lscache.get("tokenData")) {
                         xhr.setRequestHeader("Authorization", lscache.get("tokenData").tokenKey);
 
                     }
                 }
             }
             else{
-                    $.ajax( {
-                        url: "http://localhost:3000/api/changerating",
-                        type: "PUT",
-                        dataType: "json",
-                        data:{_id:id,rating:$("#rating").val()},
-                        success: function (result) {
-                            $.each(result, function (key, val) {
+                console.log("error");
+                $("#rateForm").addClass("has-error");
+                $("#rateForm").append('<span id="helpBlock2" class="help-block">Invalid rating</span>');
+            }
+        })
 
-                            })
-                        },
-                        error: function (xhr, status, error) {
+        $("#changeRateModal").on("hidden.bs.modal", function(){
+            // $(".modal-body").removeData()
+            $(this).find("input,textarea,select,#rateTitle").val('');
+        });
 
-                        },
-                        beforeSend:setHeader
-                    })
-                    function setHeader(xhr) {
-                        console.log("test")
-                        if(lscache.get("tokenData")){
-                            xhr.setRequestHeader("Authorization", lscache.get("tokenData").tokenKey);
+        $("#changeRateModalButton").click(function () {
+            console.log(id);
+            console.log("click")
+            rate = $("#rating").val();
+            if (rate == 0.5 ||rate== 1 ||rate== 1.5 ||rate== 2 ||rate== 2.5 ||rate== 3 ||rate== 3.5 ||rate== 4 ||rate== 4.5||rate== 5){
+                $.ajax({
+                    url: "http://localhost:3000/api/changerating",
+                    type: "PUT",
+                    dataType: "json",
+                    data: {_id: id, rating: $("#changeRating").val()},
+                    success: function (result) {
+                        location.reload(true);
+                    },
+                    error: function (xhr, status, error) {
 
-                        }
+                    },
+                    beforeSend: setHeader
+                })
+                function setHeader(xhr) {
+                    console.log("test")
+                    if (lscache.get("tokenData")) {
+                        xhr.setRequestHeader("Authorization", lscache.get("tokenData").tokenKey);
+
                     }
                 }
             }
+            else{
+                console.log("error");
+                $("#changeRateForm").addClass("has-error");
+                $("#changeRateForm").append('<span id="helpBlock2" class="help-block">Invalid rating</span>');
+            }
         })
+
+        $("#removeRateModalButton").click(function () {
+            console.log(id);
+            console.log("click")
+                $.ajax({
+                    url: "http://localhost:3000/api/removerating",
+                    type: "DELETE",
+                    dataType: "json",
+                    data: {_id: id},
+                    success: function (result) {
+                        location.reload(true);
+                    },
+                    error: function (xhr, status, error) {
+
+                    },
+                    beforeSend: setHeader
+                })
+                function setHeader(xhr) {
+                    console.log("test")
+                    if (lscache.get("tokenData")) {
+                        xhr.setRequestHeader("Authorization", lscache.get("tokenData").tokenKey);
+
+                    }
+                }
+
+        })
+
 
 
 

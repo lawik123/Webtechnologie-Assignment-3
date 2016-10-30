@@ -86,11 +86,11 @@ p{
 }
 
 .btn-primary:focus{
-  background-color: #191919;
+  background-color: red;
 }
 
 .btn-primary:active:focus{
-  background-color: #191919;
+  background-color: red;
 }
 
 .nav-tabs > li.active>a {

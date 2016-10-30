@@ -137,15 +137,41 @@
         <div class="modal-content">
           <div class="modal-header" style="padding:35px 50px;">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 id="rateTitle">Rate: </h4>
+            <h4 id="rateTitle"> </h4>
           </div>
           <div class="modal-body" style="padding:40px 50px;">
             <form role="form">
-              <div class="form-group" id="RateForm">
+              <div class="form-group" id="rateForm">
                 <label for="rating">Rating</label>
                 <input type="number" min="0.5" max="5.0" class="form-control" id="rating">
               </div>
-              <button id="rateModalButton" type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-log-in"></span> Add rating</button>
+              <button id="rateModalButton" type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-plus"></span> Add rating</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="changeRateModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="padding:35px 50px;">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 id="changeRateTitle"> </h4>
+          </div>
+          <div class="modal-body" style="padding:40px 50px;">
+            <form role="form">
+              <div class="form-group" id="changeRateForm">
+                <label for="rating">Rating</label>
+                <input type="number" min="0.5" max="5.0" class="form-control" id="changeRating">
+              </div>
+              <button id="changeRateModalButton" type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-pencil"></span> Change rating</button>
+              <button id="removeRateModalButton" type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-remove"></span> Remove rating</button>
             </form>
           </div>
           <div class="modal-footer">
